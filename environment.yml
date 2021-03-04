@@ -1,8 +1,6 @@
 name: base
-channel_priority: strict
 channels:
   - defaults
-  - conda-forge
 dependencies:
   - conda
   - python=3.8
@@ -14,4 +12,5 @@ dependencies:
   - anaconda-navigator
   - navigator-updater
   - ndcctools
+  - ruamel.yaml
 prefix: /afs/crc.nd.edu/user/r/rwiggles/anaconda3
