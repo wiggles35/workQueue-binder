@@ -45,9 +45,9 @@ if __name__ == '__main__':
   print("listening on port %d..." % q.port)
 
   # We create and dispatch a task for each filename given in the argument list
-  for i in range(1, len(sys.argv)):
-      infile = "%s" % sys.argv[i]
-      outfile = "%s.gz" % sys.argv[i]
+  for i in range(3):
+      infile = "%s" % chr(ord('A') + i)
+      outfile = "%s.gz" % chr(ord('A') + i)
 
       # Note that we write ./gzip here, to guarantee that the gzip version we
       # are using is the one being sent to the workers.
