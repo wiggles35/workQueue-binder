@@ -15,10 +15,6 @@ import sys
 
 # Main program
 if __name__ == '__main__':
-  if len(sys.argv) < 2:
-    print("work_queue_example <file1> [file2] [file3] ...")
-    print("Each file given on the command line will be compressed using a remote worker.")
-    sys.exit(1)
 
   # Usually, we can execute the gzip utility by simply typing its name at a
   # terminal. However, this is not enough for work queue; we have to
