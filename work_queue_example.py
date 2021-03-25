@@ -15,6 +15,10 @@ import sys
 
 # Main program
 if __name__ == '__main__':
+  if len(sys.argv) < 2:
+    print("work_queue_example <file1> [file2] [file3] ...")
+    print("Each file given on the command line will be compressed using a remote worker.")
+    sys.exit(1)
 
   # Usually, we can execute the gzip utility by simply typing its name at a
   # terminal. However, this is not enough for work queue; we have to
@@ -41,9 +45,9 @@ if __name__ == '__main__':
   print("listening on port %d..." % q.port)
 
   # We create and dispatch a task for each filename given in the argument list
-  for i in range(3):
-      infile = "%s" % chr(ord('A') + i)
-      outfile = "%s.gz" % chr(ord('A') + i)
+  for i in range(1, len(sys.argv)):
+      infile = "%s" % sys.argv[i]
+      outfile = "%s.gz" % sys.argv[i]
 
       # Note that we write ./gzip here, to guarantee that the gzip version we
       # are using is the one being sent to the workers.
